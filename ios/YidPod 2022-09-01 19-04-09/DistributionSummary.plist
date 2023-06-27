@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>spotmobile.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>bitcode</key>
+			<true/>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>EF95E34C4DC6BB06E4A178D6932C999048049FF6</string>
+				<key>dateExpires</key>
+				<string>9/1/23</string>
+				<key>type</key>
+				<string>Apple Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>675SL7QW25.com.yaschaffel.spotmobile</string>
+				<key>aps-environment</key>
+				<string>production</string>
+				<key>beta-reports-active</key>
+				<true/>
+				<key>com.apple.developer.associated-domains</key>
+				<array>
+					<string>applinks:share.yidpod.com</string>
+					<string>applinks:yidpod.com</string>
+					<string>activitycontinuation:share.yidpod.com</string>
+					<string>activitycontinuation:yidpod.com</string>
+				</array>
+				<key>com.apple.developer.game-center</key>
+				<true/>
+				<key>com.apple.developer.team-identifier</key>
+				<string>675SL7QW25</string>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>spotmobile.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>1c224ad7-f32d-465b-aa41-26d617ddf62a</string>
+				<key>name</key>
+				<string>iOS Team Store Provisioning Profile: com.yaschaffel.spotmobile</string>
+			</dict>
+			<key>symbols</key>
+			<true/>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>675SL7QW25</string>
+				<key>name</key>
+				<string>Charles Chernoff</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-spotmobile-dev-142506-authRole",
+      "UnauthRoleArn": "arn:aws:iam::064494177365:role/amplify-spotmobile-dev-142506-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::064494177365:role/amplify-spotmobile-dev-142506-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-spotmobile-dev-142506-deployment",
+      "UnauthRoleName": "amplify-spotmobile-dev-142506-unauthRole",
+      "StackName": "amplify-spotmobile-dev-142506",
+      "StackId": "arn:aws:cloudformation:us-east-1:064494177365:stack/amplify-spotmobile-dev-142506/980acfe0-0993-11eb-bab5-0e4c53e0aefd",
+      "AmplifyAppId": "d3pdtl2q8t4tdx"
+    }
+  }
+}

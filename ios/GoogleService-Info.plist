@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>699083946125-f5fu03m1uthn7b6iteo50fmkj2c4m9vc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.699083946125-f5fu03m1uthn7b6iteo50fmkj2c4m9vc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAZPD-9_Q-X2zZM-pwT7Wdpy569XxqLmYw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>699083946125</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.yaschaffel.spotmobile</string>
+	<key>PROJECT_ID</key>
+	<string>macro-resolver-202319</string>
+	<key>STORAGE_BUCKET</key>
+	<string>macro-resolver-202319.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:699083946125:ios:8e0b672f9641a9cc020ac4</string>
+	<key>DATABASE_URL</key>
+	<string>https://macro-resolver-202319.firebaseio.com</string>
+</dict>
+</plist>

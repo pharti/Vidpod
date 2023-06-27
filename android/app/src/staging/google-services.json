@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "699083946125",
+    "firebase_url": "https://macro-resolver-202319.firebaseio.com",
+    "project_id": "macro-resolver-202319",
+    "storage_bucket": "macro-resolver-202319.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699083946125:android:911ac4c7351f534d020ac4",
+        "android_client_info": {
+          "package_name": "com.yaschaffel.spotmobile.debugstaging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "699083946125-j6v5pdsnp0d113emvuhbe6o9j7mgurei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJo8zKJRI-46NS6dGRsSc7GStiJWd2TJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "699083946125-19b6kq282of6g7oniui178uiqint94bs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
