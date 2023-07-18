@@ -62,8 +62,8 @@ const EpisodeHeader = props => {
           {podcast.title.rendered
             ? podcast.title.rendered
             : podcast.title
-            ? podcast.title
-            : ''}
+              ? podcast.title
+              : ''}
         </Text>
       </TouchableOpacity>
     </View>

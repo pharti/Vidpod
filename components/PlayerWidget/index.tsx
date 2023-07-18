@@ -366,7 +366,7 @@ const PlayerWidgetChild = ({ database, episode, podcast }) => {
       }
     };
     updatestate();
-    return () => {};
+    return () => { };
   }, [dispatch]);
 
   const onPress = () => {
@@ -511,9 +511,9 @@ const enhance = withObservables(
     return {
       episode: episodeId
         ? database
-            .get('episodes')
-            .findAndObserve(episodeId)
-            .pipe(catchError((err, caught) => []))
+          .get('episodes')
+          .findAndObserve(episodeId)
+          .pipe(catchError((err, caught) => []))
         : of$(null),
       podcast: database
         .get('podcasts')

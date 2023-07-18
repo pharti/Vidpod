@@ -1,6 +1,4 @@
 import React from 'react';
-
-// import styles from './styles';
 import { ActivityIndicator, Dimensions, Image, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { onPlayPausePress } from '../../database/functions';
@@ -9,17 +7,17 @@ import {
   setPosition,
   setSliding,
 } from '../../features/currentSongSlice';
-
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useDispatch, useSelector } from 'react-redux';
-
 import TrackPlayer from 'react-native-track-player';
 import ShareButton from '../ShareButton';
+import styles from './styles';
 
 const PlayerActions = props => {
   const disable = !props.disable || false;
   const dispatch = useDispatch();
-  const { podcast, episode } = props;
+  const { podcast, episode, onPressListIcon } = props;
   // const playSpeed = useSelector(playSpeedSelector);
   // const podcast = useSelector((state: any) => selectById(state, podcast_id));
   const episodesLength = 10;
@@ -28,33 +26,30 @@ const PlayerActions = props => {
   const { width, height } = Dimensions.get('window');
   return (
     <View
-      style={{
-        flexDirection: 'row',
-        justifyContent: 'center',
-      }}>
+      style={styles.container}>
       <View
         style={{
           flexDirection: 'row',
           justifyContent: 'space-around',
           alignItems: 'center',
-          // width: '100%',
           flex: 1,
         }}>
         <TouchableOpacity
+          style={{ borderWidth: 2, borderColor: 'white', borderRadius: 4, width: 48, height: 48, justifyContent: "center", alignItems: 'center' }}
           onPress={() => {
             props.showScreen();
           }}>
-          <Text style={{ color: 'white' }}>{playSpeed + 'x'}</Text>
+          <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>{playSpeed + 'x'}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={async () => {
             dispatch(setSliding(true));
-
             const position = await TrackPlayer.getPosition();
             await TrackPlayer.seekTo(Math.round(position) - 15);
             dispatch(setPosition(Math.round(position) - 15));
             dispatch(setSliding(false));
-          }}>
+          }}
+        >
           <Image
             source={require('../../assets/images/backward-15.png')}
             style={{ width: 35, height: 40 }}
@@ -71,20 +66,7 @@ const PlayerActions = props => {
           </TouchableOpacity>
         )}
         <View
-          style={{
-            backgroundColor: 'white',
-            paddingTop: 15,
-            // marginLeft: 5,
-            paddingBottom: 15,
-            paddingRight: 15,
-            paddingLeft: status == 'playing' ? 15 : 20,
-            // width: 60,
-            // height: 60,
-            borderRadius: 50,
-            flexDirection: 'row',
-            // justifyContent: 'center',
-            // alignItems: 'center',
-          }}>
+          style={styles.playButton(status)}>
           <TouchableOpacity
             onPress={() => {
               // dispatch(
@@ -125,7 +107,6 @@ const PlayerActions = props => {
               //   }
               //   dispatch(setStatus('playing'));
               //   // await episode.updateState('playing');
-
               //   await TrackPlayer.play();
               // }
             }}
@@ -161,7 +142,6 @@ const PlayerActions = props => {
             // const position = episode.position;
             dispatch(setSliding(true));
             const position = await TrackPlayer.getPosition();
-
             // await episode.updatePosition(Math.round(position) + 15);
             await TrackPlayer.seekTo(Math.round(position) + 15);
             dispatch(setPosition(Math.round(position) + 15));
@@ -173,14 +153,18 @@ const PlayerActions = props => {
             onError={error => console.log(error.nativeEvent.error)}
           />
         </TouchableOpacity>
-        <ShareButton
+        <TouchableOpacity onPress={() => onPressListIcon()}>
+          <Icon name="playlist-play" size={56} color="white" style={{ alignSelf: 'center', paddingVertical: 16 }} />
+        </TouchableOpacity>
+        {/* <ShareButton
           shareString={`I'm listening to ${episode.title} on YidPod. Check it out at {link}`}
           suffix={podcast.id + '/' + episode.id}
           image_uri={episode.imageUri}
           title={episode.title}
-        />
+        /> */}
       </View>
     </View>
   );
 };
+
 export default PlayerActions;

@@ -176,7 +176,7 @@ export default function BottomTabNavigator() {
               name="search"
               size={24}
               color={color}
-              // style={{ padding: 10, backgroundColor: 'red' }}
+            // style={{ padding: 10, backgroundColor: 'red' }}
             />
           ),
         }}
@@ -200,7 +200,7 @@ export default function BottomTabNavigator() {
               size={24}
               color={color}
 
-              // style={{ padding: 10, backgroundColor: 'red' }}
+            // style={{ padding: 10, backgroundColor: 'red' }}
             />
           ),
         }}

@@ -44,8 +44,8 @@ function TabOneScreen({ playedShows }) {
         // id={item.term_id}
         category={item}
         index={index}
-        // title={item.title}
-        // accessToken={''}
+      // title={item.title}
+      // accessToken={''}
       />
     );
   }, []);
@@ -115,7 +115,6 @@ function TabOneScreen({ playedShows }) {
   const fetchData = useCallback(() => {
     // setCategories([]);
     setRefreshing(true);
-    console.log('herer')
 
     // setLoading(true);
     const id = user.wp_user ? user.wp_user.ID : -1;
@@ -129,10 +128,8 @@ function TabOneScreen({ playedShows }) {
         console.log(res)
         return res.json();
       })
-     
-      .then(res => {
-        console.log('herer')
 
+      .then(res => {
         if (mounted) {
           // setCategories(categories);
           // database.unsafeResetDatabase();
@@ -196,7 +193,7 @@ function TabOneScreen({ playedShows }) {
     return new Promise((resolve, reject) => {
       fetch(
         'https://yidpod.com/wp-json/wp/v2/podcasts?per_page=20&&categories=' +
-          category.id,
+        category.id,
         {
           headers: {
             'cache-control': 'no-cache',
@@ -242,6 +239,7 @@ function TabOneScreen({ playedShows }) {
       </>
     );
   };
+
   return (
     <View style={{ paddingBottom: 50 }}>
       <Top type={type} setType={setType} />

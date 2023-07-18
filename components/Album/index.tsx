@@ -82,7 +82,7 @@ const AlbumComponent = (props: AlbumProps) => {
                   props.updateAlbumCount();
                 }
               }}
-              // resizeMode="cover"
+            // resizeMode="cover"
             />
           ) : (
             <View style={styles.noimage}></View>

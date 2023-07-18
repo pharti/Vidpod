@@ -1,30 +1,22 @@
-import React, { useEffect, useRef, useState } from 'react';
-import Slider, { SliderRef } from '@react-native-community/slider';
-import TrackPlayer, { useProgress } from 'react-native-track-player';
-
-import { View, Text } from '../../Themed';
-import { LeftValue } from '../LeftValue';
+import Slider from '@react-native-community/slider';
+import React, { useState } from 'react';
+import TrackPlayer from 'react-native-track-player';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  currentSongSelector,
-  episodeIdSelector,
-  setPosition,
-  setValuePosition,
   positionSelector,
   setSliding,
+  setValuePosition
 } from '../../../features/currentSongSlice';
-// import { positionSelector } from '../../../features/episodesSlice';
+import { Text, View } from '../../Themed';
+import { LeftValue } from '../LeftValue';
 
 export const PlayerSlider = (props: any) => {
-  // const progress = useProgress(500);
 
-  // const { position: episodePosition, state } = props.episode;
-  // const [newposition, setNewPosition] = useState(0);
-  const [duration, setDuration] = useState(0);
   const dispatch = useDispatch();
-  // const database = useDatabase();
   const position = useSelector(positionSelector);
-  // const dispatch = useDispatch();
+
+  const [duration, setDuration] = useState(0);
+
   const seekto = async (position: number) => {
     await TrackPlayer.seekTo(position);
   };
@@ -37,10 +29,6 @@ export const PlayerSlider = (props: any) => {
         onSlidingComplete={(value: number) => {
           dispatch(setSliding(false));
           seekto(value);
-          // if (prevstate.current == 'playing') {
-          //   await TrackPlayer.play();
-          // }
-          // await props.episode.updateState(prevstate.current);
         }}
         onSlidingStart={() => {
           dispatch(setSliding(true));
@@ -59,13 +47,12 @@ export const PlayerSlider = (props: any) => {
         style={{
           flexDirection: 'row',
           justifyContent: 'space-between',
-          marginRight: 15,
-          marginLeft: 15,
+          backgroundColor: '#242424',
         }}
       >
         <LeftValue />
         <Text style={{ color: 'white', opacity: 0.7, fontSize: 12 }}>
-          {props.durationtext}
+          {props.durationText}
         </Text>
       </View>
     </View>

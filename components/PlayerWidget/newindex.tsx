@@ -497,7 +497,7 @@ const PlayerWidget = () => {
       }
     };
     updatestate();
-    return () => {};
+    return () => { };
   }, [dispatch]);
 
   const onPress = () => {
@@ -556,6 +556,7 @@ const PlayerWidget = () => {
     );
   } else {
     if (!show && episode_id != '') {
+      const bottomStyle = Platform.OS == 'ios' ? marginBottom - 5 : styles?.container?.bottom
       return (
         <PlayerScreen
           // position={position}

@@ -65,8 +65,8 @@ export const PodcastItem = props => {
           <View style={{ flexDirection: 'row' }}>
             <Text style={styles.author}>Podcast · {props.author}</Text>
             {props.tags &&
-            props.tags.indexOf('locked') > -1 &&
-            !props.unlock ? (
+              props.tags.indexOf('locked') > -1 &&
+              !props.unlock ? (
               <Icon
                 name={'lock'}
                 size={20}

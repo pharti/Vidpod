@@ -9,7 +9,7 @@ import Slider from '@react-native-community/slider';
 type PlayerBarProps = {
   full: boolean;
   maxValue: number;
-  durationtext: string;
+  durationText: string;
   currentSong: { episode_id: string };
 };
 // const areEqual = (prevProps: PlayerBarProps, nextProps: PlayerBarProps) => {
@@ -63,7 +63,7 @@ export const PlayerBar = (props: PlayerBarProps) => {
         }}
       />
       <View>
-        <Text style={{ color: 'white' }}>{props.durationtext}</Text>
+        <Text style={{ color: 'white' }}>{props.durationText}</Text>
       </View>
     </View>
   );

@@ -45,7 +45,6 @@ const AlbumCategory = props => {
     // <View>
     //   <Text style={{ color: 'white' }}>{item.title}</Text>
     // </View>
-
     return (
       <AlbumComponent
         album={item}
@@ -62,13 +61,13 @@ const AlbumCategory = props => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const count = useRef(0);
+
   // const albums = realm.objectForPrimaryKey('Category', id).podcasts;
   const addPodcasts = () => {
     // return new Promise((resolve, reject) => {
-
     fetch(
       'https://yidpod.com/wp-json/wp/v2/podcasts?per_page=20&&categories=' +
-        category.cat_ID,
+      category.cat_ID,
       {
         headers: {
           'cache-control': 'no-cache',
@@ -103,9 +102,9 @@ const AlbumCategory = props => {
   useEffect(() => {
     // addPodcasts();
   }, [props.category]);
+
   // const updateAlbumCount = () => {
   //   count.current++;
-
   //   if (albums && count.current == 2) {
   //     props.updateCount();
   //   }
@@ -115,6 +114,7 @@ const AlbumCategory = props => {
       <View>
         <TouchableOpacity
           onPress={() => {
+            console.log('On Press ----->')
             navigation.navigate('CategoriesScreen', {
               id: category.term_id,
               name: category.name,

@@ -1,42 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import { FlatList, View } from 'react-native';
-
-import AlbumComponent from '../../components/Album/newindex';
-// import EmptyList from '../components/EmptyList';
-
 import { withDatabase } from '@nozbe/watermelondb/DatabaseProvider';
 import { useRoute } from '@react-navigation/native';
-import { StyleSheet } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { FlatList } from 'react-native';
+import AlbumComponent from '../../components/Album/newindex';
+
 const Item = ({ item }) => <AlbumComponent album={item} />;
-const getCategories = (index, id, slug) => {
-  return fetch('https://yidpod.com/wp-json/wp/v2/podcasts?' + slug + '=' + id)
+
+const getCategories = (id) => {
+  return fetch('https://yidpod.com/wp-json/wp/v2/podcasts?categories=' + id)
     .then(res => {
       return res.json();
     })
     .then(res => res)
     .catch(error => error);
 };
+
 const keyExtractor = item => item.id.toString();
 
-const CategoriesScreen = props => {
-
+const CategoriesScreen = () => {
   const [podcasts, setPodcasts] = useState([]);
-  // const dispatch = useDispatch();
   const route = useRoute();
-  // const podcasts = useSelector((state) => selectAllPodcasts(state)).filter(
-  //   (e) => e.subscribed,
-  // );
+
   useEffect(() => {
-    const first = async () => {
-      const newpodcasts = await getCategories(
-        0,
-        route.params.id,
-        route.params.slug,
+
+    const setPodcastCategories = async () => {
+      const newPodCasts = await getCategories(
+        route?.params?.id,
       );
-      setPodcasts(newpodcasts);
+      setPodcasts(newPodCasts);
     };
-    first();
+    setPodcastCategories();
+
   }, []);
+
   return (
     <FlatList
       data={podcasts}
